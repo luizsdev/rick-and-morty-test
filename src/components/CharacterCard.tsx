@@ -22,7 +22,7 @@ export const CharacterCard = ({ character }: CharacterCardProps) => {
   return (
     <Link
       href={`/character/${character.id}`}
-      className="animate-fade-in-left w-72 sm:w-64 bg-white border border-gray-200 rounded-2xl shadow dark:bg-slate-800 dark:border-gray-700 [&_img]:hover:scale-[1.09] "
+      className="animate-fade-in-left w-72 sm:w-64  border rounded-2xl shadow bg-slate-800 border-gray-700 [&_img]:hover:scale-[1.09] "
     >
       <div className="rounded-t-2xl relative h-56 w-full block overflow-hidden ">
         <Image
@@ -34,24 +34,24 @@ export const CharacterCard = ({ character }: CharacterCardProps) => {
       </div>
       <div className="p-5">
         <div className="flex flex-row gap-1">
-          <h1 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex items-center justify-center">
+          <h1 className="mb-2 text-2xl font-bold tracking-tight text-white flex items-center justify-center">
             {character.name}
           </h1>
         </div>
-        <h1 className="mb-3 font-normal text-lg text-gray-700 dark:text-gray-400 gap-2 flex flex-row items-center justify-start">
+        <h1 className="mb-3 font-normal text-lg text-gray-400 gap-2 flex flex-row items-center justify-start">
           <p className="text-xl flex flex-row items-center justify-items-center gap-2  text-slate-300">
             {checkAlive()}
             {character.status}
           </p>
         </h1>
-        <h1 className="mb-3 font-normal text-lg text-gray-700 dark:text-gray-400 gap-2 flex flex-row items-center justify-start">
+        <h1 className="mb-3 font-normal text-lg text-gray-400 gap-2 flex flex-row items-center justify-start">
           {
             <p className="text-xl flex items-center justify-between gap-2  text-slate-300">
               <BsPerson size={25} color="white" /> {character.species}
             </p>
           }
         </h1>
-        <h1 className="mb-3 font-normal text-lg text-gray-700 dark:text-gray-400 gap-2 flex flex-row items-center justify-start">
+        <h1 className="mb-3 font-normal text-lg text-gray-400 gap-2 flex flex-row items-center justify-start">
           {
             <p className="text-xl flex items-center justify-center gap-2 text-slate-300">
               {" "}
