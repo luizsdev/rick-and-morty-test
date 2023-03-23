@@ -1,15 +1,6 @@
 import { Character } from "@/types/Character";
 import { Episode } from "@/types/Episode";
-import {
-  ArrowBendUpLeft,
-  ArrowLeft,
-  Clock,
-  Heart,
-  MapPin,
-  Planet,
-  Question,
-  Skull,
-} from "@phosphor-icons/react";
+
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -57,9 +48,7 @@ export default function Page({ character, episode }: PageProps) {
           <div className="flex flex-col items-center justify-center  mt-2">
             <div className="flex flex-col gap-12">
               <div className="flex flex-col items-center justify-center  sm:gap-3 ">
-                <h1 className="text-white xl:text-xl 2xl:text-4xl  lg:text-xl md:text-md text-sm font-bold flex flex-row gap-2">
-                  <MapPin size={30} /> Last Known Location:
-                </h1>
+                <h1 className="text-white xl:text-xl 2xl:text-4xl  lg:text-xl md:text-md text-sm font-bold flex flex-row gap-2"></h1>
                 <p className=" xl:text-xl lg:text-xl 2xl:text-3xl md:text-md text-sm text-slate-400 font-normal">
                   {character.location.name}
                 </p>
@@ -67,7 +56,6 @@ export default function Page({ character, episode }: PageProps) {
               <div className="flex flex-col items-center justify-center sm:gap-3">
                 <h1 className="text-white xl:text-xl 2xl:text-4xl lg:text-xl md:text-md text-sm font-bold flex flex-row gap-2">
                   {" "}
-                  <Planet size={30} /> Origin:
                 </h1>
                 <p className=" xl:text-xl lg:text-xl 2xl:text-3xl md:text-md text-sm text-slate-400 font-normal">
                   {character.origin.name}
@@ -76,7 +64,6 @@ export default function Page({ character, episode }: PageProps) {
               <div className="flex flex-col items-center justify-center sm:gap-3">
                 <h1 className="text-white xl:text-xl 2xl:text-4xl lg:text-xl md:text-md text-sm font-bold flex flex-row gap-2">
                   {" "}
-                  <Clock size={30} /> First Seen in:
                 </h1>
                 <p className=" xl:text-xl lg:text-xl 2xl:text-3xl md:text-md text-sm text-slate-400 font-normal">
                   {episode.name}
@@ -92,7 +79,6 @@ export default function Page({ character, episode }: PageProps) {
               type="button"
               className="flex  justify-center h-10 items-center sm:gap-2  w-1/2 2xl:w-2/3 2xl:mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm  text-center mr-2  mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              <ArrowLeft size={30} />{" "}
               <p className="xl:text-xl 2xl:text-3xl lg:text-xl md:text-md text-xs  font-bold">
                 Go Back
               </p>

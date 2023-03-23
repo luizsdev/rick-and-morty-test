@@ -1,13 +1,5 @@
 import { Character } from "@/types/Character";
-import {
-  Dna,
-  Heart,
-  MapPin,
-  Person,
-  Planet,
-  Question,
-  Skull,
-} from "@phosphor-icons/react";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,11 +10,11 @@ interface CharacterCardProps {
 export const CharacterCard = ({ character }: CharacterCardProps) => {
   const checkAlive = () => {
     if (character.status === "Alive") {
-      return <Heart color="green" size={25} />;
+      return;
     } else if (character.status === "Dead") {
-      return <Skull color="red" size={25} />;
+      return;
     } else {
-      return <Question size={25} />;
+      return;
     }
   };
   return (
@@ -45,15 +37,12 @@ export const CharacterCard = ({ character }: CharacterCardProps) => {
           </h1>
         </div>
         <h1 className="mb-3 font-normal text-lg text-gray-700 dark:text-gray-400 gap-2 flex flex-row items-center justify-start">
-          {checkAlive()}
           <p className="text-xl  text-slate-300">{character.status}</p>
         </h1>
         <h1 className="mb-3 font-normal text-lg text-gray-700 dark:text-gray-400 gap-2 flex flex-row items-center justify-start">
-          <Dna color="cyan" size={25} />
           {<p className="text-xl  text-slate-300"> {character.species}</p>}
         </h1>
         <h1 className="mb-3 font-normal text-lg text-gray-700 dark:text-gray-400 gap-2 flex flex-row items-center justify-start">
-          <Planet color="yellow" size={25} />
           {<p className="text-xl  text-slate-300"> {character.origin.name}</p>}
         </h1>
       </div>

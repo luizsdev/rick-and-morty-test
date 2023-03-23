@@ -6,7 +6,6 @@ import { Character } from "@/types/Character";
 import { CharacterCard } from "@/components/CharacterCard";
 import { GetServerSideProps, GetStaticProps } from "next";
 import { Parallax } from "react-parallax";
-import { ArrowDown } from "@phosphor-icons/react";
 import Link from "next/link";
 import { ItemsList } from "@/components/ItemsList";
 import ReactPaginate from "react-paginate";
@@ -39,13 +38,7 @@ export default function Home({ characters }: HomeProps) {
                 </span>
               </h1>
             </div>
-            <a className="animate-fade-in-left-slow" href="#title">
-              <ArrowDown
-                className="animate-bounce hidden md:block"
-                size={270}
-              />
-              <ArrowDown className="animate-bounce block md:hidden" size={85} />
-            </a>
+            <a className="animate-fade-in-left-slow" href="#title"></a>
           </div>
         </Parallax>
         <main className="scroll-smooth bg-gradient-to-b from-gray-900 to-gray-600 flex gap-5 flex-col min-h-screen items-center justify-center">

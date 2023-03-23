@@ -1,6 +1,5 @@
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { Character } from "@/types/Character";
-import { MagnifyingGlass } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { CharacterCard } from "./CharacterCard";
@@ -80,7 +79,7 @@ export const ItemsList = ({
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <MagnifyingGlass color="white" size={25} />
+            <h1>lupa</h1>
           </div>
           <input
             type="search"
