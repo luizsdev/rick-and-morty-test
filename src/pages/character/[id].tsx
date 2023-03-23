@@ -1,5 +1,6 @@
 import { Character } from "@/types/Character";
 import { Episode } from "@/types/Episode";
+import { Clock } from "@phosphor-icons/react";
 
 import { GetServerSideProps } from "next";
 import Image from "next/image";
@@ -66,6 +67,7 @@ export default function Page({ character, episode }: PageProps) {
                   {" "}
                 </h1>
                 <p className=" xl:text-xl lg:text-xl 2xl:text-3xl md:text-md text-sm text-slate-400 font-normal">
+                  <Clock size={30} />
                   {episode.name}
                   {" - "}
                   {episode.episode}
