@@ -88,7 +88,7 @@ export default function Page({ character, episode }: PageProps) {
           </div>
           <div className="flex flex-row items-start justify-center max-h-10 mt-2 sm:mt-0">
             <Link
-              href={"/"}
+              href={"/#title"}
               type="button"
               className="flex  justify-center h-10 items-center sm:gap-2  w-1/2 2xl:w-2/3 2xl:mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm  text-center mr-2  mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
