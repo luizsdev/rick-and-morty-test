@@ -1,14 +1,14 @@
+import Link from "next/link";
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import { api } from "@/services/api";
 import { Character } from "@/types/Character";
-import { CharacterCard } from "@/components/CharacterCard";
-import { GetServerSideProps, GetStaticProps } from "next";
-import { Parallax } from "react-parallax";
-import Link from "next/link";
+import { AiOutlineArrowDown } from "react-icons/ai";
 import { ItemsList } from "@/components/ItemsList";
 import ReactPaginate from "react-paginate";
+import { Parallax } from "react-parallax";
+import { GetStaticProps } from "next";
 
 interface HomeProps {
   characters: Character[];
@@ -28,7 +28,7 @@ export default function Home({ characters }: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={inter.className}>
-        <Parallax blur={4} bgImage="/vector.jpg" strength={500}>
+        <Parallax blur={5} bgImage="/vector.jpg" strength={500}>
           <div className="flex items-center justify-center flex-col sm:flex-row h-screen px-4 gap-10 sm:gap-0">
             <div className="animate-fade-in-left-slow ">
               <h1 className="text-4xl font-bold md:text-7xl xl:text-9xl text-center sm:text-left">
@@ -38,7 +38,9 @@ export default function Home({ characters }: HomeProps) {
                 </span>
               </h1>
             </div>
-            <a className="animate-fade-in-left-slow" href="#title"></a>
+            <a className="animate-fade-in-left-slow" href="#title">
+              <AiOutlineArrowDown className="animate-bounce" size={200} />
+            </a>
           </div>
         </Parallax>
         <main className="scroll-smooth bg-gradient-to-b from-gray-900 to-gray-600 flex gap-5 flex-col min-h-screen items-center justify-center">

@@ -1,7 +1,9 @@
 import { Character } from "@/types/Character";
-
+import { BsPerson } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
+import { BiHeart, BiPlanet, BiQuestionMark } from "react-icons/bi";
+import { IoSkullOutline } from "react-icons/io5";
 
 interface CharacterCardProps {
   character: Character;
@@ -10,11 +12,11 @@ interface CharacterCardProps {
 export const CharacterCard = ({ character }: CharacterCardProps) => {
   const checkAlive = () => {
     if (character.status === "Alive") {
-      return;
+      return <BiHeart size={25} color="lime" />;
     } else if (character.status === "Dead") {
-      return;
+      return <IoSkullOutline size={25} color="red" />;
     } else {
-      return;
+      return <BiQuestionMark color="cyan" size={25} />;
     }
   };
   return (
@@ -37,13 +39,25 @@ export const CharacterCard = ({ character }: CharacterCardProps) => {
           </h1>
         </div>
         <h1 className="mb-3 font-normal text-lg text-gray-700 dark:text-gray-400 gap-2 flex flex-row items-center justify-start">
-          <p className="text-xl  text-slate-300">{character.status}</p>
+          <p className="text-xl flex flex-row items-center justify-items-center gap-2  text-slate-300">
+            {checkAlive()}
+            {character.status}
+          </p>
         </h1>
         <h1 className="mb-3 font-normal text-lg text-gray-700 dark:text-gray-400 gap-2 flex flex-row items-center justify-start">
-          {<p className="text-xl  text-slate-300"> {character.species}</p>}
+          {
+            <p className="text-xl flex items-center justify-between gap-2  text-slate-300">
+              <BsPerson size={25} color="white" /> {character.species}
+            </p>
+          }
         </h1>
         <h1 className="mb-3 font-normal text-lg text-gray-700 dark:text-gray-400 gap-2 flex flex-row items-center justify-start">
-          {<p className="text-xl  text-slate-300"> {character.origin.name}</p>}
+          {
+            <p className="text-xl flex items-center justify-center gap-2 text-slate-300">
+              {" "}
+              <BiPlanet size={25} color="#ffcc00" /> {character.origin.name}
+            </p>
+          }
         </h1>
       </div>
     </Link>
