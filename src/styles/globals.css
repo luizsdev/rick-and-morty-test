@@ -2,23 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 * {
-  font: inherit;
+	font: inherit;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
-  border-radius: 25px;
-  width: 0.7rem;
+	border-radius: 25px;
+	width: 0.7rem;
 }
 
 body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: gray;
-  border-radius: 25px;
-  outline: 1px solid slategrey;
+	background-color: lime;
+	border-radius: 25px;
+	outline: 1px solid green;
 }
