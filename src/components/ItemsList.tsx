@@ -85,16 +85,22 @@ export const ItemsList = ({
 						type='search'
 						onChange={handleSearch}
 						id='default-search'
-						className='block w-60  sm:w-96 p-4 pl-10 text-xl border sm  rounded-lg  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'
+						className='block w-60 m-2  sm:w-96 p-4 pl-10 text-xl border sm  rounded-lg  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'
 						placeholder='  Search character'
 						required
 					/>
 				</div>
 			</form>
 			<div className='flex flex-wrap gap-5 max-w-7xl  justify-center md:p-5 p-2'>
-				{pageChars.map((character) => (
-					<CharacterCard key={character.id} character={character} />
-				))}
+				{pageChars.length != 0 ? (
+					pageChars.map((character) => (
+						<CharacterCard key={character.id} character={character} />
+					))
+				) : (
+					<h1 className='font-bold text-5xl italic text-white animate-fade-in-left-fast'>
+						NO CHARACTER WAS FOUND
+					</h1>
+				)}
 			</div>
 
 			{pageChars.length > 0 && (

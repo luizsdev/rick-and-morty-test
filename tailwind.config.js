@@ -13,6 +13,7 @@ module.exports = {
 			animation: {
 				'fade-in-left': 'fadeInLeft 0.5s ease-out',
 				'fade-in-left-slow': 'fadeInLeft 1s ease-out',
+				'fade-in-left-fast': 'fadeInLeft 0.2s ease-out',
 			},
 			keyframes: {
 				fadeInLeft: {

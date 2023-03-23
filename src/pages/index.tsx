@@ -43,7 +43,7 @@ export default function Home({ characters }: HomeProps) {
 						</a>
 					</div>
 				</Parallax>
-				<main className='scroll-smooth bg-gradient-to-b from-gray-900 to-gray-600 flex gap-5 flex-col min-h-screen items-center justify-center'>
+				<main className='scroll-smooth bg-gradient-to-b from-gray-900 to-gray-600 flex gap-5 flex-col min-h-screen items-center justify-start'>
 					<div className='w-full bg-slate-600 h-28 flex items-center justify-center'>
 						<p
 							className='text-xl md:text-2xl xl:text-4xl bg-gradient-to-b from-stone-50 to-zinc-200 bg-clip-text text-transparent font-bold '

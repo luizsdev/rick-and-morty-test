@@ -83,7 +83,7 @@ export default function Page({ character, episode }: PageProps) {
 						<Link
 							href={'/#title'}
 							type='button'
-							className='flex shadow-2xl justify-center  items-center gap-2 xl:m-8  w-full sm:w-1/2  focus:outline-none focus:ring-4  font-medium rounded-full text-sm  text-center m-5 bg-blue-600 hover:bg-blue-700 focus:ring-blue-800'>
+							className='flex shadow-2xl justify-center  items-center gap-2 xl:m-8  w-full sm:w-1/2  focus:outline-none focus:ring-4  font-medium rounded-full text-sm  text-center m-5 bg-blue-600  hover:bg-blue-700 focus:ring-blue-800'>
 							<AiOutlineArrowLeft color='white' size={30} />{' '}
 							<p className='xl:text-3xl lg:text-xl md:text-xl text-sm font-bold  text-white '>
 								Go Back
