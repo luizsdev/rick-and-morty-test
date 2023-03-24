@@ -20,9 +20,9 @@ export default function Error() {
             </h1>{" "}
             <br />
             <h1 className="text-2xl sm:text-4xl  drop-shadow-xl">
-              Uh-oh! Looks like you've wandered into a dimension where this page
-              doesn't exist. Unless you have a portal gun handy, you might be
-              stuck here for a while.
+              Uh-oh! Looks like you{"'"}ve wandered into a dimension where this
+              page doesn{"'"}t exist. Unless you have a portal gun handy, you
+              might be stuck here for a while.
             </h1>
             <Link
               href={"/"}
