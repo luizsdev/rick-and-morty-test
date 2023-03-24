@@ -5,7 +5,7 @@ import { BiArrowBack } from "react-icons/bi";
 export default function Error() {
   return (
     <>
-      <main className="min-h-screen w-screen flex flex-col gap-10 justify-center items-center bg-gradient-to-r from-slate-50 to-green-100">
+      <main className="min-h-screen w-screen flex flex-col gap-10 justify-center items-center bg-gradient-to-r from-slate-50 to-emerald-200">
         <div className="md:w-full xl:w-2/3 flex flex-col sm:flex-row justify-center items-center p-5">
           <Image
             src="/rick.png"
