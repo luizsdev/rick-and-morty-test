@@ -119,9 +119,9 @@ export const ItemsList = ({
           containerClassName="flex gap-2 justify-center items-center  bg-slate-600 rounded-2xl p-1 md:p-2 text-white shadow-2xl"
           pageClassName="bg-slate-800 text-white rounded-2xl w-10 p-1 md:p-2 flex items-center justify-center "
           activeClassName="bg-slate-900 rounded-2xl p-1 md:p-2 text-white flex items-center justify-center"
-          previousClassName="bg-slate-800 rounded-2xl p-1 md:p-2 text-white "
-          nextClassName="bg-slate-800 rounded-2xl p-1 md:p-2 text-white"
-          breakClassName="bg-slate-800 rounded-2xl w-10 p-1 md:p-2 flex items-center justify-center"
+          previousClassName="bg-slate-800 rounded-2xl p-1 md:p-2 text-white min-w-32  "
+          nextClassName="bg-slate-800 rounded-2xl p-1 md:p-2 text-white  min-w-32 "
+          breakClassName="bg-slate-800 rounded-2xl w-10 p-1 md:p-2 flex items-center justify-center "
         />
       )}
     </>
