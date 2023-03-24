@@ -1,8 +1,8 @@
 # 🌌 RICK AND MORTY CATALOGO
 É Basicamente um catálogo que utiliza a Rick and Morty API para pegar todos os personagens e listar, com filtro de pesquisa e visualização individual para cada personagem.
 
-## LINK DA VERCEL PARA GRAPHQL
-- rick-and-morty-test-git-main-graphql-luizsdev.vercel.app
+## LINK DO APP REFATORADO PARA GRAPHQL
+- [APP VERCEL](rick-and-morty-test-git-main-graphql-luizsdev.vercel.app)
 
 ## 🚀 TECNOLOGIAS 
 
