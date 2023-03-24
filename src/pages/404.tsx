@@ -15,7 +15,7 @@ export default function Error() {
             className="block sm:hidden "
           />
           <div>
-            <h1 className="text-2xl  sm:text-6xl font-bold   drop-shadow-background">
+            <h1 className="text-3xl  sm:text-6xl font-bold   drop-shadow-background">
               404
             </h1>{" "}
             <br />
