@@ -9,6 +9,7 @@ import { ItemsList } from "@/components/ItemsList";
 import ReactPaginate from "react-paginate";
 import { Parallax } from "react-parallax";
 import { GetStaticProps } from "next";
+import { Loader } from "@/components/Loader";
 
 interface HomeProps {
   characters: Character[];
