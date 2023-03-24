@@ -2,7 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
-import { api } from "@/services/api";
+import { client } from "@/services/client";
 import { Character } from "@/types/Character";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { ItemsList } from "@/components/ItemsList";
@@ -10,6 +10,8 @@ import ReactPaginate from "react-paginate";
 import { Parallax } from "react-parallax";
 import { GetStaticProps } from "next";
 import { Loader } from "@/components/Loader";
+import { gql } from "@apollo/client";
+import { GET_CHARACTERS } from "@/graphql/GetCharactersQuery";
 
 interface HomeProps {
   characters: Character[];
@@ -20,6 +22,7 @@ const inter = Inter({
 });
 
 export default function Home({ characters }: HomeProps) {
+  console.log(characters);
   return (
     <>
       <Head>
@@ -29,16 +32,27 @@ export default function Home({ characters }: HomeProps) {
         <link rel="icon" href="/logo.jpg" />
       </Head>
       <div className={inter.className}>
-        <Parallax blur={10} bgImage="/vector.jpg" strength={500}>
+        <Parallax blur={10} bgImage="/vector.jpg" strength={700}>
           <div className="flex items-center justify-center flex-col sm:flex-row h-screen px-4 gap-10 sm:gap-0">
             <div className="animate-fade-in-left-slow ">
-              <h1 className="text-4xl font-bold md:text-7xl xl:text-9xl text-center sm:text-left">
+              <h1 className="text-4xl font-bold md:text-7xl xl:text-9xl flex flex-col justify-center  items-start  gap-1 text-center sm:text-left">
                 Welcome to the <br className="hidden 2xl:block" />
                 <span className="text-white  font-bold">Alien Catalog</span>
               </h1>
             </div>
             <a className="animate-fade-in-left-slow" href="#title">
-              <AiOutlineArrowDown className="animate-bounce   " size={200} />
+              <AiOutlineArrowDown
+                className="animate-bounce block sm:hidden"
+                size={100}
+              />
+              <AiOutlineArrowDown
+                className="animate-bounce hidden sm:block lg:hidden"
+                size={150}
+              />
+              <AiOutlineArrowDown
+                className="animate-bounce hidden lg:block"
+                size={200}
+              />
             </a>
           </div>
         </Parallax>
@@ -62,25 +76,24 @@ export default function Home({ characters }: HomeProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  let pageCount: number = 1;
+export const getStaticProps = async () => {
+  let pageCount = 1;
   const fetchSinglePage = async (page: number) => {
-    const pageData = await api
-      .get(`character/?page=${page}`)
-      .then((res): Character[] => {
-        pageCount = res.data.info.pages;
-        return res.data.results;
-      });
-    return pageData;
+    const { data } = await client.query({
+      query: GET_CHARACTERS,
+      variables: { page: page },
+    });
+    return data;
   };
 
   let fullData = [] as Character[];
-
   for (let i = 1; i <= pageCount; i++) {
     await fetchSinglePage(i).then((data) => {
-      fullData.push(...data);
+      fullData.push(...data.characters.results);
+      pageCount = data.characters.info.pages;
     });
   }
+
   return {
     props: {
       characters: fullData,

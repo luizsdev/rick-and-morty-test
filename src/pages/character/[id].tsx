@@ -7,6 +7,8 @@ import { GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import { CHARACTER_QUERY } from "@/graphql/GetCharacterQuery";
+import { client } from "@/services/client";
 
 interface PageProps {
   character: Character;
@@ -105,18 +107,17 @@ export default function Page({ character, episode }: PageProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  let id = context.params?.id;
+  let { id } = context.params ?? {};
   if (id) {
-    const response = await fetch(
-      `https://rickandmortyapi.com/api/character/${id}`
-    );
-    const data = await response.json();
-    const episode = await fetch(data.episode[0]);
-    const episodeData = await episode.json();
+    const { data } = await client.query({
+      query: CHARACTER_QUERY,
+      variables: { id },
+    });
+    console.log(data);
     return {
       props: {
-        character: data,
-        episode: episodeData,
+        character: data.character,
+        episode: data.character.episode[0],
       },
     };
   }
