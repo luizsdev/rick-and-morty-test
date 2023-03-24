@@ -32,7 +32,7 @@ export default function Page({ character, episode }: PageProps) {
         <link rel="icon" href="/logo.jpg" />
       </Head>
       <main className="min-h-screen w-screen bg-gradient-to-b from-slate-50 to-emerald-200 flex items-center  justify-center gap-10 p-5 ">
-        <div className="animate-fade-in-left shadow-2xl min-h-5/6  min-w-2/6 bg-slate-700  rounded-3xl flex  item-start justify-start flex-col gap-0 sm:gap-16">
+        <div className="animate-fade-in-left shadow-xl min-h-5/6  min-w-2/6 bg-slate-700  rounded-3xl flex  item-start justify-start flex-col gap-0 sm:gap-16">
           <div className=" flex items-center justify-start flex-col md:flex-row p-5 gap-2">
             <Image
               width={270}
@@ -90,7 +90,7 @@ export default function Page({ character, episode }: PageProps) {
             <Link
               href={"/#title"}
               type="button"
-              className="flex shadow-2xl justify-center  items-center gap-2 xl:m-8  w-full sm:w-1/2  focus:outline-none focus:ring-4  font-medium rounded-full text-sm  text-center m-5 bg-blue-600  hover:bg-blue-700 focus:ring-blue-800"
+              className="flex shadow-2xl p-2 justify-center  items-center gap-2 xl:m-8  w-full sm:w-1/2  focus:outline-none focus:ring-4  font-medium rounded-2xl text-sm  text-center m-5 bg-blue-600  hover:bg-blue-700 focus:ring-blue-800"
             >
               <AiOutlineArrowLeft color="white" size={30} />{" "}
               <p className="xl:text-3xl lg:text-xl md:text-xl text-sm font-bold  text-white ">

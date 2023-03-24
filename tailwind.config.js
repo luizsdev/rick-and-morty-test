@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      minWidth: {
+        32: "32px",
+      },
       dropShadow: {
         background: "    --tw-drop-shadow: drop-shadow(4px 4px 0px #08bae3);",
       },
