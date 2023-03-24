@@ -113,7 +113,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       query: CHARACTER_QUERY,
       variables: { id },
     });
-    console.log(data);
     return {
       props: {
         character: data.character,

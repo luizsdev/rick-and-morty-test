@@ -22,7 +22,6 @@ const inter = Inter({
 });
 
 export default function Home({ characters }: HomeProps) {
-  console.log(characters);
   return (
     <>
       <Head>
