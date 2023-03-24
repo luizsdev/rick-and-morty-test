@@ -31,7 +31,7 @@ export default function Page({ character, episode }: PageProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.jpg" />
       </Head>
-      <main className="h-screen w-screen bg-gradient-to-b from-slate-50 to-emerald-200 flex items-center  justify-center gap-10 ">
+      <main className="min-h-screen w-screen bg-gradient-to-b from-slate-50 to-emerald-200 flex items-center  justify-center gap-10 ">
         <div className="animate-fade-in-left shadow-2xl min-h-5/6  min-w-2/6 bg-slate-700  rounded-3xl flex  item-start justify-start flex-col gap-0 sm:gap-16">
           <div className=" flex items-center justify-start flex-col md:flex-row p-5 gap-2">
             <Image
