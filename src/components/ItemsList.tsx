@@ -166,32 +166,32 @@ export const ItemsList = ({
 					<h3 className="font-bold text-lg text-center">Filter Characters</h3>
 					<select
 						value={filterStatus}
-						className="select select-bordered w-full max-w-none mt-5 "
+						className="select select-bordered w-full max-w-none mt-5 text-white"
 						onChange={(e) => {
 							setFilterStatus(e.target.value);
 						}}
 					>
-						<option disabled selected>
+						<option className="text-white" disabled selected>
 							Status
 						</option>
-						<option>Alive</option>
-						<option>Dead</option>
+						<option className="text-white">Alive</option>
+						<option className="text-white">Dead</option>
 					</select>
 
 					<select
 						value={filterGender}
-						className="select select-bordered w-full max-w-none mt-5"
+						className="select select-bordered w-full max-w-none mt-5 text-white"
 						onChange={(e) => {
 							setFilterGender(e.target.value);
 						}}
 					>
-						<option disabled selected>
+						<option className="text-white" disabled selected>
 							Gender
 						</option>
-						<option>Male</option>
-						<option>Female</option>
-						<option>Genderless</option>
-						<option>Unknown</option>
+						<option className="text-white">Male</option>
+						<option className="text-white">Female</option>
+						<option className="text-white">Genderless</option>
+						<option className="text-white">Unknown</option>
 					</select>
 					<div className="modal-action flex justify-between ">
 						<label
