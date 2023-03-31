@@ -12,6 +12,7 @@ import { GetStaticProps } from 'next';
 import { Loader } from '@/components/Loader';
 import { gql } from '@apollo/client';
 import { GET_CHARACTERS } from '@/graphql/GetCharactersQuery';
+import { FilterModal } from '@/components/FilterModal';
 
 interface HomeProps {
 	characters: Character[];
@@ -34,27 +35,31 @@ export default function Home({ characters }: HomeProps) {
 				<Parallax blur={10} bgImage="/vector.jpg" strength={700}>
 					<div className="flex items-center justify-center flex-col sm:flex-row h-screen px-4 gap-10 sm:gap-0">
 						<div className="animate-fade-in-left-slow ">
-							<h1 className="text-4xl font-bold md:text-7xl xl:text-9xl flex flex-col justify-center  items-start  gap-1 text-center sm:text-left">
+							<h1 className="text-4xl font-bold md:text-7xl xl:text-9xl flex flex-col justify-center text-black items-start  gap-1 text-center sm:text-left">
 								Welcome to the <br className="hidden 2xl:block" />
 								<span className="text-white  font-bold">Alien Catalog</span>
 							</h1>
 						</div>
 						<a className="animate-fade-in-left-slow" href="#title">
 							<AiOutlineArrowDown
+								color="black"
 								className="animate-bounce block sm:hidden"
-								size={100}
+								size={80}
 							/>
 							<AiOutlineArrowDown
 								className="animate-bounce hidden sm:block lg:hidden"
+								color="black"
 								size={150}
 							/>
 							<AiOutlineArrowDown
 								className="animate-bounce hidden lg:block"
 								size={200}
+								color="black"
 							/>
 						</a>
 					</div>
 				</Parallax>
+
 				<main className="scroll-smooth bg-gradient-to-b from-gray-900 to-gray-600 flex gap-5 flex-col min-h-screen items-center justify-start">
 					<div className="w-full bg-slate-600 h-28 flex items-center justify-center">
 						<p
