@@ -9,6 +9,7 @@ specifiers:
   eslint: 8.36.0
   eslint-config-next: 13.2.4
   graphql: ^16.6.0
+  husky: ^8.0.3
   next: 13.2.4
   postcss: ^8.4.21
   react: 18.2.0
@@ -37,6 +38,7 @@ dependencies:
 
 devDependencies:
   autoprefixer: 10.4.14_postcss@8.4.21
+  husky: 8.0.3
   postcss: 8.4.21
   tailwindcss: 3.2.7_postcss@8.4.21
 
@@ -1462,6 +1464,12 @@ packages:
     dependencies:
       react-is: 16.13.1
     dev: false
+
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /ignore/5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
