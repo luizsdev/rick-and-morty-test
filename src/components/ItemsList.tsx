@@ -185,7 +185,9 @@ export const ItemsList = ({
 							setFilterGender(e.target.value);
 						}}
 					>
-						<option selected>Gender</option>
+						<option disabled selected>
+							Gender
+						</option>
 						<option>Male</option>
 						<option>Female</option>
 						<option>Genderless</option>
