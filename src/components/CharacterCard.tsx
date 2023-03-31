@@ -3,6 +3,7 @@ import { BsPerson } from 'react-icons/bs';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BiHeart, BiPlanet, BiQuestionMark } from 'react-icons/bi';
+import { IoFemaleSharp } from 'react-icons/io5';
 import { IoSkullOutline } from 'react-icons/io5';
 import { useState } from 'react';
 import { Loader } from './Loader';
@@ -20,6 +21,10 @@ export const CharacterCard = ({ character }: CharacterCardProps) => {
 			return <IoSkullOutline size={25} color="red" />;
 		} else {
 			return <BiQuestionMark color="cyan" size={25} />;
+		}
+	};
+	const checkGender = () => {
+		if (character.gender === 'Male') {
 		}
 	};
 	return (
@@ -44,16 +49,26 @@ export const CharacterCard = ({ character }: CharacterCardProps) => {
 							{character.name}
 						</h1>
 					</div>
+
 					<h1 className="mb-3 font-normal text-lg text-gray-400 gap-2 flex flex-row items-center justify-start">
 						<p className="text-xl flex flex-row items-center justify-items-center gap-2  text-slate-300">
 							{checkAlive()}
 							{character.status}
 						</p>
 					</h1>
+
 					<h1 className="mb-3 font-normal text-lg text-gray-400 gap-2 flex flex-row items-center justify-start">
 						{
 							<p className="text-xl flex items-center justify-between gap-2  text-slate-300">
 								<BsPerson size={25} color="white" /> {character.species}
+							</p>
+						}
+					</h1>
+					<h1 className="mb-3 font-normal text-lg text-gray-400 gap-2 flex flex-row items-center justify-start">
+						{
+							<p className="text-xl flex items-center justify-center gap-2 text-slate-300">
+								{' '}
+								<IoFemaleSharp size={25} color="#ffdcb5" /> {character.gender}
 							</p>
 						}
 					</h1>
