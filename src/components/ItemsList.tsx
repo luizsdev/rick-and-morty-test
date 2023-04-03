@@ -21,9 +21,10 @@ export const ItemsList = ({
 	itemsPerPage,
 }: ItemsListProps) => {
 	const rows: any = [];
-	const [filterGender, setFilterGender] = useState('');
-	const [filterStatus, setFilterStatus] = useState('');
+	const [filterGender, setFilterGender] = useState('Gender');
+	const [filterStatus, setFilterStatus] = useState('Status');
 	const [currentFilter, setCurrentFilter] = useState<Character[]>([]);
+	const [setFilteredSearch, setSetFilteredSearch] = useState<Character[]>([]);
 	const [isFiltering, setIsFiltering] = useState(false);
 	const { width } = useWindowSize();
 	const [pageChars, setPageChars] = useState<Character[]>(
@@ -53,11 +54,12 @@ export const ItemsList = ({
 					.includes(e.target.value.toLowerCase());
 			});
 			setPageChars(filteredData.slice(0, itemsPerPage));
+			setFiltered(filteredData);
 			setCurrentPageCount(Math.ceil(filteredData.length / itemsPerPage));
 			setPage(0);
 		} else if (e.target.value.length === 0 && isFiltering) {
 			setPageChars(currentFilter.slice(0, itemsPerPage));
-			setCurrentPageCount(Math.ceil(filtered.length / itemsPerPage));
+			setCurrentPageCount(Math.ceil(currentFilter.length / itemsPerPage));
 			setPage(0);
 		} else {
 			setPageChars(fullData.slice(0, itemsPerPage));
@@ -108,24 +110,43 @@ export const ItemsList = ({
 		setIsFiltering(true);
 		if (filterGender === 'Gender' && filterStatus.length != 0) {
 			const filteredData = fullData.filter((character) => {
+				return (
+					character.status.toLowerCase() === filterStatus.toLowerCase() &&
+					character.name.toLowerCase().includes(search.toLowerCase())
+				);
+			});
+			const fullFilteredData = fullData.filter((character) => {
 				return character.status.toLowerCase() === filterStatus.toLowerCase();
 			});
 			setPageChars(filteredData.slice(0, itemsPerPage));
 			setFiltered(filteredData);
-			setCurrentFilter(filteredData);
+			setCurrentFilter(fullFilteredData);
 			setCurrentPageCount(Math.ceil(filteredData.length / itemsPerPage));
 			setPage(0);
 		} else if (filterStatus === 'Status' && filterGender.length != 0) {
 			const filteredData = fullData.filter((character) => {
+				return (
+					character.gender.toLowerCase() === filterGender.toLowerCase() &&
+					character.name.toLowerCase().includes(search.toLowerCase())
+				);
+			});
+			const fullFilteredData = fullData.filter((character) => {
 				return character.gender.toLowerCase() === filterGender.toLowerCase();
 			});
 			setPageChars(filteredData.slice(0, itemsPerPage));
 			setFiltered(filteredData);
-			setCurrentFilter(filteredData);
+			setCurrentFilter(fullFilteredData);
 			setCurrentPageCount(Math.ceil(filteredData.length / itemsPerPage));
 			setPage(0);
 		} else if (filterGender.length != 0 && filterStatus.length != 0) {
 			const filteredData = fullData.filter((character) => {
+				return (
+					character.status.toLowerCase() === filterStatus.toLowerCase() &&
+					character.gender.toLowerCase() === filterGender.toLowerCase() &&
+					character.name.toLowerCase().includes(search.toLowerCase())
+				);
+			});
+			const fullFilteredData = fullData.filter((character) => {
 				return (
 					character.status.toLowerCase() === filterStatus.toLowerCase() &&
 					character.gender.toLowerCase() === filterGender.toLowerCase()
@@ -133,7 +154,7 @@ export const ItemsList = ({
 			});
 			setPageChars(filteredData.slice(0, itemsPerPage));
 			setFiltered(filteredData);
-			setCurrentFilter(filteredData);
+			setCurrentFilter(fullFilteredData);
 			setCurrentPageCount(Math.ceil(filteredData.length / itemsPerPage));
 			setPage(0);
 		}
@@ -155,6 +176,7 @@ export const ItemsList = ({
 						<input
 							type="search"
 							onChange={handleSearch}
+							value={search}
 							id="default-search"
 							className="block w-60 m-2  sm:w-96 p-4 pl-10 text-xl border sm  rounded-lg  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
 							placeholder="  Search character"
@@ -205,6 +227,7 @@ export const ItemsList = ({
 								setIsFiltering(false);
 								setPage(0);
 								setCurrentPageCount(pageCount);
+								setSearch('');
 							}}
 						>
 							Clear Filters
