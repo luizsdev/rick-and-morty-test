@@ -15,11 +15,11 @@ export default function Error() {
 						className="block sm:hidden "
 					/>
 					<div>
-						<h1 className="text-3xl  sm:text-6xl font-bold   drop-shadow-background">
+						<h1 className="text-3xl  sm:text-6xl font-bold   drop-shadow-background text-black">
 							500
 						</h1>{' '}
 						<br />
-						<h1 className="text-2xl sm:text-4xl  drop-shadow-xl">
+						<h1 className="text-2xl sm:text-4xl  drop-shadow-xl text-black">
 							Uh-oh! Looks like you{"'"}ve wandered into a dimension where this
 							page doesn{"'"}t exist. Unless you have a portal gun handy, you
 							might be stuck here for a while.
